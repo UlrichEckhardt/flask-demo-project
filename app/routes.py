@@ -1,6 +1,5 @@
 from flask import Flask
-
-app = Flask(__name__, static_folder="static/")
+from . import app
 
 @app.get("/hello/<user>")
 def hello_world(user: str):
