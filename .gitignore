@@ -1,6 +1,6 @@
 # Python files
 /pyenv
-/__pycache__
+__pycache__
 
 # IDE (VS Code) configurations
 .vscode
