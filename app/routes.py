@@ -1,9 +1,13 @@
+from datetime import datetime
 from flask import Flask
 from . import app
 
 @app.get("/hello/<user>")
 def hello_world(user: str):
-    return f"<p>Hello, {user}!</p>"
+    now = datetime.now()
+    formatted_now = now.strftime("%A, %d %B, %Y at %X")
+
+    return f"Hello {user}! It's {formatted_now} now."
 
 @app.get("/")
 def index():
