@@ -25,3 +25,7 @@ jobs:
       run: |
         pip install pycodestyle
         pycodestyle --show-source app/
+    - name: Lint With ruff
+      run: |
+        pip install ruff
+        ruff check --output-format=github app
