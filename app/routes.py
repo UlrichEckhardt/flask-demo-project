@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 from . import app
 
+
 @app.get("/hello/<user>")
 def hello_world(user: str):
     return render_template(
@@ -11,9 +12,11 @@ def hello_world(user: str):
         date=datetime.now()
     )
 
+
 @app.get("/")
 def index():
     return app.redirect("/hello/world")
+
 
 @app.get("/favicon.ico")
 def favicon():
