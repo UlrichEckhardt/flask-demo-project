@@ -2,9 +2,7 @@
 
 name: Python Linting
 
-on:
-  push:
-    branches: [ "*" ]
+on: [push]
 
 permissions:
   contents: read
