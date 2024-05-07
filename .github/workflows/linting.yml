@@ -25,3 +25,7 @@ jobs:
       run: |
         pip install pycodestyle
         pycodestyle --show-source app/
+    - name: Lint With pylint
+      run: |
+        pip install pylint
+        pylint app/
