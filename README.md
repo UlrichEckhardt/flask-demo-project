@@ -5,8 +5,8 @@
 python3 -m venv pyenv
 # activate venv
 . pyenv/bin/activate.fish
-# install Flask in venv
-pip install Flask
+# install requirements in venv
+pip install -r requirements.txt
 # run Flask webserver
 python3 -m flask --app app.entrypoint run
 

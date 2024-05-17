@@ -1,0 +1,28 @@
+# This workflow runs the project and performs functional tests
+
+name: Functional Testing
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  functional-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Start Webserver
+      run: |
+        python3 -m flask --app app.entrypoint run&
+    - name: Wait For The Webserver To Be Ready
+      run: |
+        curl --silent --output /dev/null --retry-connrefused --retry 5 localhost:5000/favicon.ico
